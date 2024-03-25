@@ -15,11 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
-        
+        <Navbar />
         <Container className="min-h-screen">{children}</Container>
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   );
 }
