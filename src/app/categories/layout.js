@@ -1,6 +1,7 @@
 import CategoryList from "@/components/ui/CategoryList/CategoryList";
 import { Box, Container, Grid } from "@mui/material";
 import React from "react";
+import DynamicNewsPage from "./[categoriesId]/page";
 
 const CategoriesLayout = ({ children }) => {
   return (
@@ -11,7 +12,7 @@ const CategoriesLayout = ({ children }) => {
             <CategoryList/>
           </Grid>
           <Grid item xs={9}>
-            <h1>News</h1>
+            {children}
           </Grid>
         </Grid>
       </Container>
