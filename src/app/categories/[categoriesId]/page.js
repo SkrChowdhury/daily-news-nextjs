@@ -24,32 +24,31 @@ const DynamicNewsPage = async ({ params, searchParams }) => {
         rowSpacing={1}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
       >
-        <Grid item xs={6}>
-          <Card>
-            <CardActionArea>
-              <CardMedia>
-                {/* <Image src={topNews2} width={800} alt="tip news" /> */}
-              </CardMedia>
-              <CardContent>
-                <p className="w-[100px] bg-red-800 px-2 my-5 rounded text-white">
-                  Technology
-                </p>
-                <Typography gutterBottom>
-                  Bitcoin Climbs as Elon Musk Says Tesla Likely to Accept it
-                  Again
-                </Typography>
-                <Typography gutterBottom className="my-3">
-                  By Sakkar Chowdhury - Mar 18 2024
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  It is a long established fact that a reader will be distracted
-                  by the readble content of a page when looking at its
-                  layout...........
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
+        {data.map((news) => (
+          <Grid key={news?.id} item xs={6}>
+            <Card>
+              <CardActionArea>
+                <CardMedia>
+                  <Image height={100} width={800} src={news?.thumbnail_url} width={800} alt="tip news" />
+                </CardMedia>
+                <CardContent>
+                  <p className="w-[100px] bg-red-800 px-2 my-5 rounded text-white">
+                    {news?.category}
+                  </p>
+                  <Typography gutterBottom>
+                  {news?.title}
+                  </Typography>
+                  <Typography gutterBottom className="my-3">
+                    By {news?.author?.name} - {news?.author?.published_date}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                   {news?.details}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
     </div>
   );
