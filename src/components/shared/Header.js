@@ -7,13 +7,22 @@ const Header = () => {
   return (
     <Box className="w-full my-5">
       <Container>
-        <Image className="mx-auto" src={headingImage} width={500} height={500} alt="logo" />
-        <Typography className="my-2" color="gray" variant="body2" textAlign="center">
+        <Image
+          src={headingImage}
+          width={500}
+          height={500}
+          alt="logo"
+          className=" mx-auto"
+        />
+        <Typography
+          variant="body2"
+          color="gray"
+          textAlign="center"
+          className="my-2"
+        >
           Journalism Without Fear or Favour
         </Typography>
-        <Typography textAlign="center">
-          {currentDate}
-        </Typography>
+        <Typography textAlign="center">{currentDate}</Typography>
       </Container>
     </Box>
   );

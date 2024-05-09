@@ -5,13 +5,15 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import logo from "@/assets/logo.png";
 import Image from "next/image";
+import logo from "@/assets/logo.png";
 import { IconButton, Stack } from "@mui/material";
-//icons
+
+// icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Link from "next/link";
 import Header from "./Header";
+
 const navItems = [
   {
     route: "Home",
@@ -38,14 +40,16 @@ const navItems = [
     pathname: "/contact",
   },
 ];
+
 function Navbar() {
   return (
     <>
       <Header />
-      <AppBar className="bg-black" position="static">
+      <AppBar position="static" className="bg-black">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Image src={logo} width={100} height={100} alt="logo" />
+
             <Box className="w-full text-center">
               {navItems.map((item) => (
                 <Link key={item} href={item.pathname}>
@@ -53,6 +57,7 @@ function Navbar() {
                 </Link>
               ))}
             </Box>
+
             <Box>
               <Stack
                 direction="row"
